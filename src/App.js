@@ -6,7 +6,7 @@ const App = () => {
 
   const getData = async (e) => {
     try {
-      const data = await axios.get("/api/v1/cryptography/ciphers");
+      const data = await axios.get("/cryptography/ciphers");
       // setFetched(data);
       console.log(data);
     } catch (error) {

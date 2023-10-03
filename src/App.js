@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+// import { useEffect, useState } from "react";
 
-function App() {
+const App = () => {
+  // const [fetched, setFetched] = useState("");
+
+  const getData = async (e) => {
+    try {
+      const data = await axios.get("/api/v1/cryptography/ciphers");
+      // setFetched(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={getData}>load data</button>
+    </>
   );
-}
+};
 
 export default App;
